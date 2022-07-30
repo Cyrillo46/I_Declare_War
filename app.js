@@ -1,5 +1,8 @@
 let deckId = "";
 
+if (!deckId) {
+}
+
 function handleClick() {
   fetch("https://www.deckofcardsapi.com/api/deck/new/")
     .then((res) => res.json())
