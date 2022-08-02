@@ -1,9 +1,13 @@
-body {
+body,
+html {
+  background-color: rgb(39, 39, 58);
   margin: 0;
   padding: 0;
-  background-color: rgb(39, 39, 58);
-  display: flex;
   height: 100vh;
+}
+
+body {
+  display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
@@ -21,4 +25,30 @@ button {
 button button.draw {
   font-size: 1.2em;
   padding: 5px;
+}
+
+#new-deck {
+  align-self: flex-start;
+  margin-top: 0;
+  padding: 0.6em;
+  font-size: 1.2em;
+}
+
+button:hover,
+button:focus {
+  background-color: #2ec1b5;
+  color: rgb(188, 42, 188);
+  cursor: pointer;
+  border: none;
+  padding: 1em;
+  margin: 1em 0;
+}
+
+button:active {
+  background-color: #000000;
+  color: rgb(230, 233, 30);
+  cursor: pointer;
+  border: none;
+  padding: 1em;
+  margin: 1em 0;
 }
