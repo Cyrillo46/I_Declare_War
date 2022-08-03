@@ -3,13 +3,14 @@ let deckId = "";
 if (!deckId) {
 }
 
+// fetches the deck id and stores the value in deckId
 function handleClick() {
   fetch("https://www.deckofcardsapi.com/api/deck/new/")
     .then((res) => res.json())
     .then((data) => (deckId = data.deck_id));
   console.log(deckId);
 }
-
+// fetches 2 cards from deck api then renders image of card by providing the src attribute data
 function drawCard() {
   fetch(`https://www.deckofcardsapi.com/api/deck/${deckId}/draw/?count=2`)
     .then((res) => res.json())
@@ -21,7 +22,7 @@ function drawCard() {
       `;
     });
 }
-
+// determines winner by checking which index value is greater between the two arguments passed by comparing indexes
 function determineWinner(card1, card2) {
   const valueOptions = [
     "2",
