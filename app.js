@@ -1,17 +1,26 @@
 let deckId = "";
+let newDeck = document.getElementById("new-deck");
+let drawCard = document.getElementById("draw-card");
+let card1 = "7";
+let card2 = "KING";
+
+newDeck.addEventListener("click", handleClick);
+drawCard.addEventListener("click", drawTwoCards);
 
 if (!deckId) {
+  drawCard.style.display = "none";
 }
 
 // fetches the deck id and stores the value in deckId
 function handleClick() {
+  drawCard.style.display = "block";
   fetch("https://www.deckofcardsapi.com/api/deck/new/")
     .then((res) => res.json())
     .then((data) => (deckId = data.deck_id));
   console.log(deckId);
 }
 // fetches 2 cards from deck api then renders image of card by providing the src attribute data
-function drawCard() {
+function drawTwoCards() {
   fetch(`https://www.deckofcardsapi.com/api/deck/${deckId}/draw/?count=2`)
     .then((res) => res.json())
     .then((data) => {
@@ -51,11 +60,5 @@ function determineWinner(card1, card2) {
     console.log("player 2 wins");
   }
 }
-
-document.getElementById("new-deck").addEventListener("click", handleClick);
-document.getElementById("draw-card").addEventListener("click", drawCard);
-
-let card1 = "7";
-let card2 = "KING";
 
 determineWinner(card1, card2);
