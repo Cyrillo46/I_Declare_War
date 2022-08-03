@@ -53,21 +53,6 @@ button:active {
   margin: 1em 0;
 }
 
-div#player-1 {
-  border: 1px solid #5af746;
-  height: 400px;
-  width: calc(400px * 5 / 7);
-  border-radius: 10px;
-  margin-bottom: 1em;
-}
-
-#player-2 {
-  border: 1px solid #5af746;
-  height: 400px;
-  width: calc(400px * 5 / 7);
-  border-radius: 10px;
-}
-
 #cardDisplay {
   display: flex;
   flex-direction: column;
